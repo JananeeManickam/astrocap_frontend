@@ -1,0 +1,23 @@
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .floating-buttons button {
+    background-color: #0a1931; /* Matches navbar */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .floating-buttons button:hover {
+    background-color: #122d57;
+  }
+  
