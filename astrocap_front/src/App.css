@@ -11,6 +11,7 @@ body {
 }
 
 
+
 #tsparticles {
   position: fixed;
   top: 0;
@@ -39,22 +40,7 @@ body {
   z-index: 1;
 } */
 
-.frozen-card {
-  margin: 10px auto 2rem;
-  /* Top spacing for Navbar */
-  padding: 2rem;
-  width: 65rem;
-  max-width: 95%;
-  min-height: 40rem;
-  border-radius: 16px;
-  background: rgba(39, 37, 37, 0.3);
-  color: #fff;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 1;
-  text-align: center;
-  box-sizing: border-box;
-}
+
 
 
 /* style={{

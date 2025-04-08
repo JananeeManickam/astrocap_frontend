@@ -12,13 +12,23 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import NavButton from './NavButton';
+import { useNavigate } from 'react-router-dom';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pageRoutes = {
+  Home: '/',
+  Explore: '/explore',
+  Pricing: '/pricing',
+  Blog: '/blog',
+};
+const pages = ['Home', 'Explore', 'Pricing', 'Blog'];
+
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -82,10 +92,21 @@ function ResponsiveAppBar() {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                    if (page === 'Pricing' || page === 'Blog') {
+                      alert(`${page} page is under construction!`);
+                    } else {
+                      navigate(pageRoutes[page]);
+                    }
+                  }}
+                >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
+
             </Menu>
           </Box>
 
@@ -115,9 +136,20 @@ function ResponsiveAppBar() {
 
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
             {pages.map((page) => (
-              <NavButton key={page} name={page} />
+              <NavButton
+                key={page}
+                name={page}
+                onClick={() => {
+                  if (page === 'Pricing' || page === 'Blog') {
+                    alert(`${page} page is under construction!`);
+                  } else {
+                    navigate(pageRoutes[page]);
+                  }
+                }}
+              />
             ))}
           </Box>
+
         </Toolbar>
       </Container>
     </AppBar>
