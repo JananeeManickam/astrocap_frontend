@@ -7,20 +7,18 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import NavButton from './NavButton';
 import { useNavigate } from 'react-router-dom';
 
 const pageRoutes = {
   Home: '/',
   Explore: '/explore',
-  Pricing: '/pricing',
-  Blog: '/blog',
+  Profile: '/profile',
+  Community: '/blog',
 };
-const pages = ['Home', 'Explore', 'Pricing', 'Blog'];
+const pages = ['Home', 'Explore', 'Profile', 'Community'];
 
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -50,7 +48,7 @@ function ResponsiveAppBar() {
     <AppBar position="sticky" sx={{ backgroundColor: 'black', top: 0, zIndex: 1100 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <RocketLaunchIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -111,7 +109,7 @@ function ResponsiveAppBar() {
           </Box>
 
           {/* Logo for mobile */}
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <RocketLaunchIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -140,7 +138,7 @@ function ResponsiveAppBar() {
                 key={page}
                 name={page}
                 onClick={() => {
-                  if (page === 'Pricing' || page === 'Blog') {
+                  if (page === 'Blog') {
                     alert(`${page} page is under construction!`);
                   } else {
                     navigate(pageRoutes[page]);

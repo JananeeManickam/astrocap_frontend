@@ -75,7 +75,7 @@ function Footer() {
                         whileHover={{ scale: 1.1 }}
                         style={{ display: "inline-block" }}
                     >
-                        Done by
+                        Developed by
                         <span
                             style={{
                                 textDecoration: "underline",
@@ -83,7 +83,7 @@ function Footer() {
                                 position: "relative",
                             }}
                         >
-                            Jananee Manikkam
+                            Jananee Manickam
                             <span
                                 style={{
                                     content: '""',

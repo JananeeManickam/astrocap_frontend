@@ -1,6 +1,7 @@
 // src/components/MoonParticles.js
 import { useCallback } from "react";
-import Particles from "react-particles";
+// import Particles from "react-particles";
+import { Particles } from "@tsparticles/react";
 import { loadSlim } from "tsparticles-slim";
 
 const MoonParticles = () => {
